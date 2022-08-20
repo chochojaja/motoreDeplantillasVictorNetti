@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% const estilo='color:blue' %>
+    <h1 style=<%= estilo %> >Ingrese Producto</h1>
+    
+
+    <%- include('../formulario.ejs') %>
+
+    <% if(productos.length > 0){ %>
+        <ul>
+            <% productos.forEach( prod => { %>
+                <li>Nombre:  <%= prod.nombre %> Precio:  <%= prod.precio %> thumbnail:  <%= prod.thumbnail %></li>
+            <% }) %>
+        </ul>
+    <% }else{ %>
+        <h2> No se encontraron productos </h2>
+    <% } %>
+
+
+
+
+</body>
+</html>
